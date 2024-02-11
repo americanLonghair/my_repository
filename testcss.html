@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"><!-- 本网页用来测试较复杂的css效果 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Animation</title>
+    <style>
+        .myElement {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<div class="myElement"></div>
+
+<script>
+    var element = document.querySelector('.myElement');
+    var angle = 0;
+
+    function animate() {
+        angle += 1;
+        element.style.transform = 'rotate(' + angle + 'deg)';
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>
+
+</body>
+</html>
+
+
+
+
+<!--虚幻引擎前端集成测试-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Unreal Engine HTML5 Demo</title>-->
+<!--    <script src="UE4Demo.js"></script> &lt;!&ndash; 引入虚幻引擎导出的 JavaScript 文件 &ndash;&gt;-->
+<!--    <style>-->
+<!--        #unrealContainer {-->
+<!--            width: 800px;-->
+<!--            height: 600px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Unreal Engine HTML5 Demo</h1>-->
+<!--<div id="unrealContainer"></div> &lt;!&ndash; 在页面中创建一个容器用于显示虚幻引擎内容 &ndash;&gt;-->
+<!--<button onclick="startGame()">Start Game</button> &lt;!&ndash; 在页面中添加一个按钮，点击后开始游戏 &ndash;&gt;-->
+<!--<script>-->
+<!--    var unrealContainer = document.getElementById('unrealContainer');-->
+<!--    var gameInstance;-->
+
+<!--    // 加载虚幻引擎游戏-->
+<!--    function loadGame() {-->
+<!--        // 创建虚幻引擎游戏实例-->
+<!--        gameInstance = new UE4Demo.unrealEngine({-->
+<!--            container: unrealContainer-->
+<!--        });-->
+<!--    }-->
+
+<!--    // 开始游戏-->
+<!--    function startGame() {-->
+<!--        if (gameInstance) {-->
+<!--            // 调用虚幻引擎游戏的开始游戏方法-->
+<!--            gameInstance.startGame();-->
+<!--        } else {-->
+<!--            console.log("Game is not loaded yet!");-->
+<!--        }-->
+<!--    }-->
+
+<!--    // 页面加载完成后加载游戏-->
+<!--    window.onload = loadGame;-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
